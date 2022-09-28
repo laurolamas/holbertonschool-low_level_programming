@@ -1,3 +1,5 @@
+#include "_putchar.c"
+
 /**
  * print_alphabet - wefwargwe
  */
