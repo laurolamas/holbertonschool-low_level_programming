@@ -3,8 +3,16 @@
  * print_alphabet - wefwargwe
  */
 
+void print_alphabet(void)
+{
+	char ch;
 
-void print_alphabet(void);
+	for (ch = 'a' ; ch <= 'z' ; ch++)
+	{
+		putchar (ch);
+	}
+	putchar ('\n');
+}
 
 /**
  * main - wefwargwe
@@ -15,19 +23,4 @@ int main(void)
 {
 	print_alphabet();
 	return (0);
-}
-
-/**
- * print_alphabet - wefwargwe
- */
-
-void print_alphabet(void)
-{
-	char ch;
-
-	for (ch = 'a' ; ch <= 'z' ; ch++)
-	{
-	putchar (ch);
-	}
-	putchar ('\n');
 }
