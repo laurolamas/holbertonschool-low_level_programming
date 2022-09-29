@@ -1,11 +1,11 @@
 #include "main.h"
 /**
- * _islower - Returnos 1 if c is lowcase, and 0 if else
+ * _isalpha - Returnos 1 if c is letter, and 0 if else
  * @c: input number
- * Return: 1 if lower, 0 if else
+ * Return: 1 if letter, 0 if else
  */
 
-int _islower(int c)
+int _isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
