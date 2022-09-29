@@ -19,8 +19,11 @@ void times_table(void)
 			first = (num / 10);
 			last = (num % 10);
 
-			if (first == 0)
+			if (first == 0 &&  b != 0)
 				_putchar(' ');
+			else if (first == 0 &&  b == 0)
+			{
+			}
 			else
 				_putchar(first + '0');
 
