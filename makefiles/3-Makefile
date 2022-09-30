@@ -22,7 +22,7 @@ fclean:
 	$(RM) *.~ *.pwd *.o $(NAME)
 
 re:
-	touch *.c
+	touch %.c
 #main.o: main.c
 #	$(CC) -c $<
 #
