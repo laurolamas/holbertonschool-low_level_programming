@@ -21,8 +21,7 @@ oclean:
 fclean:
 	$(RM) *~ *.o $(NAME)
 
-re:
-	fclean all 
+re: fclean all 
 #main.o: main.c
 #	$(CC) -c $<
 #
