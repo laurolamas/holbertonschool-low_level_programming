@@ -12,11 +12,13 @@ void print_square(int n)
 	{
 		for (j = 0; j < n; j++)
 		{
-			for (k = 0; k < j; k++)
+			for (k = 0; k < n; k++)
 			{
 				_putchar('#');
 			}
+			_putchar('\n');
 		}
 	}
+	else
 	_putchar('\n');
 }
