@@ -2,8 +2,9 @@
 #include <stdio.h>
 /**
  * main - Fizz Buzz
+ * Return: 0
  */
-void main(void)
+int main(void)
 {
 	int i;
 
@@ -20,5 +21,6 @@ void main(void)
 		printf(" ");
 	}
 	putchar('\n');
+	return(0);
 }
 
