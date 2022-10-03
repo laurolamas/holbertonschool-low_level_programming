@@ -1,8 +1,9 @@
+#include "main.h"
 #include <stdio.h>
 /**
- * fizzbuzz - Fizz Buzz
+ * main - Fizz Buzz
  */
-void fizzbuzz(void)
+void main(void)
 {
 	int i;
 
@@ -18,5 +19,6 @@ void fizzbuzz(void)
 			printf("%d", i);
 		printf(" ");
 	}
+	putchar('\n');
 }
 
