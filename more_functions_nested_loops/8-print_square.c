@@ -3,7 +3,7 @@
  * print_square - Checks if uppercase
  * @n: Input number
  */
-void print_diagonal(int n)
+void print_square(int n)
 {
 	int j;
 	int k;
