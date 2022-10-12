@@ -18,14 +18,9 @@ char *cap_string(char *str)
 		{
 			for (j = 0; j < 13; j++)
 			{
-				if str[i] = p[j];
-					isFirst = true;
+				if (str[i] = p[j])
+					str[i] -= 32;
 			}
-			if (isFirst)
-			{
-				str[i] -= 32;
-				isFirst = false;
-			{
 		}
 
 
