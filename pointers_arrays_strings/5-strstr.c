@@ -16,7 +16,7 @@ char *_strstr(char *haystack, char *needle)
 	int len2 = 0;
 
 	if (needle[0] == '\0')
-		return (&haystack);
+		return (&haystack[0]);
 
 	for (j = 0; needle[j] != '\0'; j++)
 		continue;
