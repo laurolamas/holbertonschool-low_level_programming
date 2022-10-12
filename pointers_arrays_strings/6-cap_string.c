@@ -8,7 +8,6 @@ char *cap_string(char *str)
 {
 	int i;
 	int j;
-	bool isFirst = false;
 
 	char p [13] = {32, 9, 10, ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
 
