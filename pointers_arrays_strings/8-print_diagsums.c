@@ -13,8 +13,8 @@
 void print_diagsums(int *a, int size)
 {
 	int i;
-	sumd1;
-	sumd2;
+	int sumd1;
+	int sumd2;
 
 	for (i = 0; i < n; i++)
 		sum1 += a[i][i];
