@@ -20,9 +20,9 @@ void print_diagsums(int *a, int size)
 		sumd1 += a[i][i];
 	
 	for (i = (size-1); i >= 0; i--)
-		sumd2 += a[(size - 1) -i][i];
+		sumd2 += a[((size - 1) -i)][i];
 	
-	printf("%d, %d",sumd1,sumd2)
+	printf("%d, %d",sumd1,sumd2);
 
 
 }
