@@ -26,8 +26,10 @@ unsigned int _strspn(char *s, char *accept)
 				foundMatch = 1;
 				break;
 			}
-		if (!foundMatch) break;
-		else init ++;
+		if (!foundMatch)
+			break;
+		else
+			init++;
 	}
 
 	return (init);
