@@ -5,7 +5,7 @@
  * print_diagsums - printit
  *
  * @a: a
- * @size:
+ * @size: aaaaa
  * Return: void
  *
  */
