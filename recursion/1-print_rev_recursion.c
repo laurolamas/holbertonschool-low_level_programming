@@ -1,22 +1,42 @@
 #include "main.h"
 
 /**
- * _strlen_recursion - aaaaa
+ * _strlen - aaaaa
  *
  * @s: s
  *
  * Return: length
  */
 
-int _strlen_recursion(char *s)
+int _strlen(char *s)
 {
-	int len = 0;
+	int i;
 
-	if (*s++ != '\0')
-	{
-		len++;
-		_strlen_recursion(s++);
-	}
+	for (i = 0; i != '0'; i++)
+		continue;
+
+	return (i - 1);
+}
+
+/**
+ * _print_rev_recursion - aaaaa
+ *
+ * @s: s
+ *
+ * Return: length
+ */
+
+void _print_rev_recursion(char *s)
+{
+	int len;
+
+	len = _strlen(s);
+	s += len;
+	_putchar(*s);
+
+	if (*s-- != '\0')
+		_print_rev_recursion(s--);
 	else
-		return (len);
+		_putchar('\n');
+
 }
