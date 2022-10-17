@@ -19,7 +19,8 @@ int findsqr(int n, int i)
 		return (-1);
 
 	else
-		findsqr(n, ++i);
+		return (findsqr(n, ++i));
+	return (0);
 }
 
 /**
