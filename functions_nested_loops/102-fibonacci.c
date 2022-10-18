@@ -13,15 +13,13 @@ int main(void)
 	long int f2 = 1;
 	long int sum;
 
-	printf("0, 1, ");
-
-	for (i = 0; i < 49; i++)
+	for (i = 0; i < 50; i++)
 	{
 		sum = f1 + f2;
 		f1 = f2;
 		f2 = sum;
 		printf("%ld", (sum));
-		if (i != 48)
+		if (i != 49)
 			printf(", ");
 	}
 	putchar('\n');
