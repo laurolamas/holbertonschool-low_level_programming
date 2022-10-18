@@ -32,5 +32,5 @@ int main(void)
 		inj++;
 	}
 	putchar('\n');
-	return (1);
+	return (0);
 }
