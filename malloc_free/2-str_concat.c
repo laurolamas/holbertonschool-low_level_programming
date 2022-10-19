@@ -1,6 +1,5 @@
 #include <stdlib.h>
-#include "_strlen.c"
-
+#include "main.h"
 /**
  * str_concat - str
  *
@@ -14,6 +13,11 @@ char *str_concat(char *s1, char *s2)
 {
 	int i;
 	char *con = NULL;
+
+	if (!s1)
+		s1 = "";
+	if(!s2)
+		s2 = "";
 
 	con = malloc(_strlen(s1) + _strlen(s2) + 1);
 
@@ -34,7 +38,6 @@ char *str_concat(char *s1, char *s2)
 	}
 	else
 	{
-		_putchar('a');
 		return (NULL);
 	}
 }
