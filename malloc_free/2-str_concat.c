@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "main.h"
+#include "_strlen.c"
 
 /**
  * str_concat - str
