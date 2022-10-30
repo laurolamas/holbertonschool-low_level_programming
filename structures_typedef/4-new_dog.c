@@ -1,42 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "dog.h"
-
-/**
- * _strlen - aaaaaaa
- * @s: aaaaaaa
- * Return: bbbbbbb
- */
-
-int _strlen(char *s)
-{
-	int i = 0;
-
-	for (; s[i] != '\0'; i++)
-		continue;
-
-	return	(i);
-}
-
-/**
- * _strcpy - aaaaaaa
- *
- * @dest: dest
- * @src: src
- *
- * Return: the pointer to dest
- */
-
-char *_strcpy(char *dest, char *src)
-{
-	int i;
-
-	for (i = 0; src[i] != '\0'; i++)
-		dest[i] = src[i];
-	dest[i] = '\0';
-	return (dest);
-}
-
 /**
  * _strdup - strdup
  *
@@ -110,12 +74,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	new_dog = malloc(sizeof(struct dog));
 
-	if(new_dog)
+	if (new_dog)
 	{
 		new_dog->name = namecpy;
 		new_dog->age = age;
 		new_dog->owner = ownercpy;
-		
+
 		return (new_dog);
 	}
 	else
