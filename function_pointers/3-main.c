@@ -15,21 +15,21 @@ int main(int argc, char *argv[])
 {
 	if (argc != 4)
 	{
-		printf("Error1\n");
+		printf("Error\n");
 		exit(98);
 	}
 
 	if ((*argv[2] == '/' && atoi(argv[3]) == 0) ||
 			(*argv[2] == '%' && atoi(argv[3]) == 0))
 	{
-		printf("Error2\n");
+		printf("Error\n");
 		exit(99);
 	}
 
 	if (!(*argv[2] == '+' || *argv[2] == '-' ||
 				*argv[2] == '*' || *argv[2] == '/' || *argv[2] == '%'))
 	{
-		printf("Error3\n");
+		printf("Error\n");
 		exit(100);
 	}
 
