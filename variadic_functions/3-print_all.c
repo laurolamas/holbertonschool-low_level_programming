@@ -5,8 +5,7 @@
 /**
  * print_all - Print all
  *
- * @n: n
- * @separator: s
+ * @format: format
  * Return: n
  */
 
@@ -16,6 +15,8 @@ void print_all(const char * const format, ...)
 	int i = 0;
 	bool printedSomething = false;
 
+	if (!format)
+		return (NULL);
 	va_start(ptr, format);
 	while (format[i])
 	{
