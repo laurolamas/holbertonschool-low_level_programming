@@ -35,8 +35,11 @@ void print_all(const char * const format, ...)
 				printf("%f", va_arg(ptr, double));
 				break;
 			case 's':
-				s = va_arg(ptr, char *),
-				printf("%s", s = NULL ? "(nil)" : s);
+				s = va_arg(ptr, char *);
+				if (s)
+					printf("%s", s);
+				else
+					printf("(nil)");
 				break;
 		}
 		if ((format[i] == 'c' || format[i] == 'i' ||
