@@ -16,7 +16,7 @@ void print_all(const char * const format, ...)
 	bool printedSomething = false;
 
 	if (!format)
-		return (NULL);
+		return;
 	va_start(ptr, format);
 	while (format[i])
 	{
