@@ -23,14 +23,14 @@ int main(int argc, char *argv[])
 			(*argv[2] == '%' && atoi(argv[3]) == 0))
 	{
 		printf("Error\n");
-		exit(99);
+		exit(100);
 	}
 
 	if (!(*argv[2] == '+' || *argv[2] == '-' ||
 				*argv[2] == '*' || *argv[2] == '/' || *argv[2] == '%'))
 	{
 		printf("Error\n");
-		exit(100);
+		exit(99);
 	}
 
 	printf("%d\n", (*get_op_func(argv[2]))(atoi(argv[1]), atoi(argv[3])));
