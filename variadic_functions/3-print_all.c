@@ -1,7 +1,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <string.h>
-#include <stdbool.h>
+
 /**
  * print_all - Print all
  *
@@ -12,11 +12,14 @@
 void print_all(const char * const format, ...)
 {
 	va_list ptr;
-	int i = 0;
-	bool printedSomething = false;
+	size_t i = 0;
+	char *s;
 
 	if (!format)
+	{
+		printf("\n");
 		return;
+	}
 	va_start(ptr, format);
 	while (format[i])
 	{
@@ -24,26 +27,21 @@ void print_all(const char * const format, ...)
 		{
 			case 'c':
 				printf("%c", va_arg(ptr, int));
-				printedSomething = true;
 				break;
 			case 'i':
 				printf("%d", va_arg(ptr, int));
-				printedSomething = true;
 				break;
 			case 'f':
 				printf("%f", va_arg(ptr, double));
-				printedSomething = true;
 				break;
 			case 's':
-				printf("%s", va_arg(ptr, char *));
-				printedSomething = true;
+				s = va_arg(ptr, char *),
+				printf("%s", s = NULL ? "(nil)" : s);
 				break;
 		}
-		if (format[i + 1] && printedSomething)
-		{
+		if ((format[i] == 'c' || format[i] == 'i' ||
+					format[i] == 'f' || format[i] == 's') && format[(i + 1)])
 			printf(", ");
-			printedSomething = false;
-		}
 		i++;
 	}
 	printf("\n");
