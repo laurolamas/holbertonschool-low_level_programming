@@ -1,9 +1,9 @@
 #include "lists.h"
 
 /**
- * add_node - Add Node
+ * add_nodeint - Add Node
  * @head: head
- * @str: str
+ * @n: n
  * Return: New Node
  */
 
