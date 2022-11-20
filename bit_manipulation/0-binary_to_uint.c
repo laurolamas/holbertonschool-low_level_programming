@@ -7,10 +7,10 @@
  * Return: num
  */
 
-long unsigned int _pow(long unsigned int a, long unsigned int b)
+unsigned long int _pow(unsigned long int a, unsigned long int b)
 {
-	long unsigned int i;
-	long unsigned int pow = 1;
+	unsigned long int i;
+	unsigned long int pow = 1;
 
 	for (i = 0; i < b; i++)
 	{
@@ -28,9 +28,9 @@ long unsigned int _pow(long unsigned int a, long unsigned int b)
 
 unsigned int binary_to_uint(const char *b)
 {
-	long unsigned int j;
+	unsigned long int j;
 	int i;
-	long unsigned int num = 0;
+	unsigned long int num = 0;
 
 	if (!b)
 		return (0);
