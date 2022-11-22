@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <string.h>
+
 /**
  * checkReturn - checkReturn
  * @returnValue: returnValue
@@ -48,7 +49,8 @@ int main(int argc, char *argv[])
 	char *file_to;
 	int f_from, f_to;
 	char buffer[1024];
-	int sz;
+	int sz = 1;
+	int wr;
 
 	if (argc != 3)
 		checkReturn(-1, 97, NULL);
@@ -62,11 +64,14 @@ int main(int argc, char *argv[])
 	f_to = open(file_to, O_CREAT | O_RDWR | O_TRUNC, 0664);
 	checkReturn(f_to, 99, file_to);
 
-	sz = read(f_from, buffer, 1024);
-	checkReturn(sz, 98, file_from);
+	while (sz)
+	{
+		sz = read(f_from, buffer, 1024);
+		checkReturn(sz, 98, file_from);
 
-	sz = write(f_to, buffer, strlen(buffer));
-	checkReturn(sz, 99, file_to);
+		wr = write(f_to, buffer, sz);
+		checkReturn(wr, 99, file_to);
+	}
 
 	sz = close(f_from);
 	checkReturn(sz, 100, "3");
