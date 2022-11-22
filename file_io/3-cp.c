@@ -58,10 +58,10 @@ int main(int argc, char *argv[])
 	file_from = argv[1];
 	file_to = argv[2];
 
-	f_from = open(file_from, O_RDWR);
+	f_from = open(file_from, O_RDONLY);
 	checkReturn(f_from, 98, file_from);
 
-	f_to = open(file_to, O_CREAT | O_RDWR | O_TRUNC, 0664);
+	f_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	checkReturn(f_to, 99, file_to);
 
 	while (sz)
@@ -76,7 +76,7 @@ int main(int argc, char *argv[])
 	sz = close(f_from);
 	checkReturn(sz, 100, "3");
 
-	close(f_to);
+	sz = close(f_to);
 	checkReturn(sz, 100, "4");
 
 	return (0);
