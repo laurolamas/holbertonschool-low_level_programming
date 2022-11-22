@@ -41,7 +41,7 @@ void checkReturn(int returnValue, int errorNumber, char *stringToPrint)
  * main - main
  * @argc: argc
  * @argv: argv
- * Return: 1 on success
+ * Return: 0 on success
  **/
 int main(int argc, char *argv[])
 {
@@ -79,5 +79,5 @@ int main(int argc, char *argv[])
 	close(f_to);
 	checkReturn(sz, 100, "4");
 
-	return (1);
+	return (0);
 }
