@@ -1,7 +1,47 @@
 #include "main.h"
 #include <stdio.h>
 #include <string.h>
+/**
+ * checkReturn - checkReturn
+ * @returnValue: returnValue
+ * @errorNumber: errorNumber
+ * @stringToPrint: stringToPrint
+ */
+void checkReturn(int returnValue, int errorNumber, char *stringToPrint)
+{
+	if (returnValue != -1)
+		return;
 
+	switch (errorNumber)
+	{
+		case 97:
+			dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+			exit(97);
+			break;
+
+		case 98:
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", stringToPrint);
+			exit(98);
+			break;
+
+		case 99:
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", stringToPrint);
+			exit(99);
+			break;
+
+		case 100:
+			dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", stringToPrint);
+			exit(100);
+			break;
+	}
+}
+
+/**
+ * main - main
+ * @argc: argc
+ * @argv: argv
+ * Return: 1 on success
+ **/
 int main(int argc, char *argv[])
 {
 	char *file_from;
@@ -11,40 +51,28 @@ int main(int argc, char *argv[])
 	int sz;
 
 	if (argc != 3)
-	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97);
-	}
+		checkReturn(-1, 97, NULL);
 
 	file_from = argv[1];
 	file_to = argv[2];
 
 	f_from = open(file_from, O_RDWR);
-	if (f_from == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
-		exit(98);
-	}
+	checkReturn(f_from, 98, file_from);
 
 	f_to = open(file_to, O_CREAT | O_RDWR | O_TRUNC, 0664);
-	if (f_to == -1)
-    {
-        dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
-        exit(98);
-    }
+	checkReturn(f_to, 99, file_to);
 
 	sz = read(f_from, buffer, 1024);
-		if (sz == -1)
-    {
-        dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
-        exit(98);
-    }
+	checkReturn(sz, 98, file_from);
 
-	dprintf(f_to, "%s", buffer);
-/**	sz = write(f_to, buffer, strlen(buffer));
+	sz = write(f_to, buffer, strlen(buffer));
+	checkReturn(sz, 99, file_to);
 
-	if (sz == -1)
-		return (0);
-*/	
+	sz = close(f_from);
+	checkReturn(sz, 100, "3");
+
+	close(f_to);
+	checkReturn(sz, 100, "4");
+
 	return (1);
 }
