@@ -1,5 +1,25 @@
 #include "lists.h"
-/**#include "1-dlistint_len.c"*/
+
+/**
+ * len - List len
+ *
+ * @h: head
+ *
+ * Return: count
+ */
+
+size_t len(const dlistint_t *h)
+{
+	size_t i;
+
+	for (i = 0; h; i++)
+	{
+		h = h->next;
+	}
+
+	return (i);
+
+}
 
 /**
  * insert_dnodeint_at_index - Insert
@@ -19,9 +39,9 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	if (!h)
 		return (NULL);
 
-	if ((dlistint_len(*h)) == idx)
+	if ((len(*h)) == idx)
 		return (add_dnodeint_end(h, n));
-	if ((dlistint_len(*h)) == 0)
+	if ((len(*h)) == 0)
 		return (add_dnodeint_end(h, n));
 
 	for (i = 0; i < idx; i++)
