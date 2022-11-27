@@ -26,7 +26,6 @@ int add_node(hash_node_t **head, const char *key, const char *value)
 	}
 
 	node->value = strdup(value);
-
 	if (!node->value)
 	{
 		free(node->key);
@@ -52,7 +51,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	int index;
 
+	if (!ht || !key)
+		return (0);
+
 	index = key_index((unsigned char *)key, ht->size);
+
+	if (((ht->array)[index]) && (strcmp(((ht->array)[index])->key, key) == 0))
+	{
+		((ht->array)[index])->value = strdup(value);
+		return (1);
+	}
 
 	return (add_node(&((ht->array)[index]), key, value));
 }
